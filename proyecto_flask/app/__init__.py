@@ -1,16 +1,12 @@
 from flask import Flask
-from flask import render_template
+from proyecto_flask.products.views import ruta
+
+
+
+
 
 app = Flask(__name__)
-
-
-#from app.products import views
-#from app.products.views import products
-
-
-@app.route('/mirutaa/<name>')
-def hindex(name=None):
-    return render_template('hello.html', name=name)
+app.register_blueprint(ruta)
 
 
 if __name__ == "__main__":
